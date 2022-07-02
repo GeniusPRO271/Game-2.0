@@ -8,25 +8,22 @@ public class Health : MonoBehaviour
     public Animator animator;
 
     public HealthBar healthBar;
-
+    public IteamDrop iteamDrop;
     private int MAX_HEALTH = 100;
 
-    void Update()
-    {
 
-    }
     public void Damage(int amount)
     {
         if (animator.GetBool("IsDead") == false) {
             this.health -= amount;
-            Debug.Log(health);
             animator.SetTrigger("Damage");
             healthBar.SetHealth(health);
-            Debug.Log(health);
 
             if (health <= 0)
             {
                 animator.SetBool("IsDead", true);
+                Destroy(gameObject, 1f);
+                iteamDrop.DropIteam();
                 health = -1;
             }
         }
@@ -34,19 +31,8 @@ public class Health : MonoBehaviour
 
     }
 
-    public void Heal(int amount)
+    public void UpdateMaxHealth(int amount)
     {
-        if (amount < 0)
-        {
-            this.health += 0;
-        }
-        if (health + amount > MAX_HEALTH)
-        {
-            this.health = MAX_HEALTH;
-        }
-        else
-        {
-            this.health += amount;
-        }
+        MAX_HEALTH = MAX_HEALTH + amount;
     }
 }

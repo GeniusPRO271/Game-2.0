@@ -11,7 +11,6 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 axisMovement;
     public Joystick joystick;
     public Animator animator;
-    SpriteRenderer spriteRenderer;
 
     // Start is called before the first frame update
     void Start()
@@ -68,4 +67,18 @@ public class PlayerMovement : MonoBehaviour
             transform.localScale = new Vector3(1f, transform.localScale.y);  
         }
     }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Coin"))
+        {
+            Destroy(other.gameObject);
+            int XpToGive = other.GetComponent<Xp_iteam>().XpToGive;
+            GetComponent<LvlSysystem>().GainXp(XpToGive);
+        }
+    }
+    public void UpdatePlayerMovement(int ammount)
+    {
+        speed = speed + ammount;
+    }
+
 }

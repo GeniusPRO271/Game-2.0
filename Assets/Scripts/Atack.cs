@@ -13,7 +13,6 @@ public class Atack : MonoBehaviour
     public float AtackSpeed = 0.5f;
     float nextAtackTime = 0f;
 
-    // Update is called once per frame
     void Update()
     {
         if (Time.time >= nextAtackTime)
@@ -39,5 +38,13 @@ public class Atack : MonoBehaviour
     {
         if (atackPoint == null) return;
         Gizmos.DrawWireSphere(atackPoint.position, atackRange);
+    }
+    public void UpdateAtackDamage(int ammount)
+    {
+        AtackDamge = AtackDamge + ammount;
+    }
+    public void UpdateAtackRange(int ammount)
+    {
+        atackRange = atackRange + ammount;
     }
 }

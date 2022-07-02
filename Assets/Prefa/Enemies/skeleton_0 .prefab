@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 7827812206235643465}
   - component: {fileID: 1445595084}
   - component: {fileID: 1445595090}
+  - component: {fileID: 629641054}
   m_Layer: 6
   m_Name: 'skeleton_0 '
   m_TagString: Untagged
@@ -129,8 +130,8 @@ MonoBehaviour:
   enemyLayers:
     serializedVersion: 2
     m_Bits: 128
-  AtackDamge: 10
-  AtackInterval: 2
+  AtackDamge: 0
+  AtackInterval: 1
 --- !u!114 &1445595079
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,6 +147,7 @@ MonoBehaviour:
   health: 100
   animator: {fileID: 5815830156995531639}
   healthBar: {fileID: 8588306086764102110}
+  iteamDrop: {fileID: 629641054}
 --- !u!50 &7827812206235643465
 Rigidbody2D:
   serializedVersion: 4
@@ -205,9 +207,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 813a76f14f7c84deea853697bd059ef6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 5465267898655697364, guid: e85870bc980cb489f8f6d2788ca2a2f0, type: 3}
-  speed: 0.01
+  player: {fileID: 0}
+  speed: 0.03
   animator: {fileID: 5815830156995531639}
+--- !u!114 &629641054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2745131858478125211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79cf12191636b47e9a83b3b0e3c06e01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IteamToDrop:
+    list:
+    - item: {fileID: 3130257298573494102, guid: 6ac2f97cf51c14382a1497dcda6a292a, type: 3}
+      weight: 5
+    - item: {fileID: 2247239447641744444, guid: cb6e9e4831b6e4b8787e52070a53af0f, type: 3}
+      weight: 1
+    - item: {fileID: 1009328254352285351, guid: bfd32d8ff4a6a40e7bad966eda9e3243, type: 3}
+      weight: 1
+  EnemyPos: {fileID: 7888726267359757666}
 --- !u!1 &2886736358421915132
 GameObject:
   m_ObjectHideFlags: 0

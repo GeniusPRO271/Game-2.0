@@ -370,6 +370,7 @@ GameObject:
   - component: {fileID: 7221054265609654903}
   - component: {fileID: 5244964432485779579}
   - component: {fileID: 1696595156489880802}
+  - component: {fileID: 1225020747509347977}
   - component: {fileID: 6138346299390805132}
   - component: {fileID: 489347675865806589}
   - component: {fileID: 399739607}
@@ -511,6 +512,28 @@ MonoBehaviour:
   health: 100
   animator: {fileID: 399739607}
   healthBar: {fileID: 2959075411773636301}
+  iteamDrop: {fileID: 1225020747509347977}
+--- !u!114 &1225020747509347977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8121417488199059099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79cf12191636b47e9a83b3b0e3c06e01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IteamToDrop:
+    list:
+    - item: {fileID: 3130257298573494102, guid: 6ac2f97cf51c14382a1497dcda6a292a, type: 3}
+      weight: 5
+    - item: {fileID: 2247239447641744444, guid: cb6e9e4831b6e4b8787e52070a53af0f, type: 3}
+      weight: 1
+    - item: {fileID: 1009328254352285351, guid: bfd32d8ff4a6a40e7bad966eda9e3243, type: 3}
+      weight: 1
+  EnemyPos: {fileID: 1185111642768899606}
 --- !u!114 &6138346299390805132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -523,8 +546,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 813a76f14f7c84deea853697bd059ef6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 5465267898655697364, guid: e85870bc980cb489f8f6d2788ca2a2f0, type: 3}
-  speed: 0.01
+  player: {fileID: 0}
+  speed: 0.03
   animator: {fileID: 399739607}
 --- !u!114 &489347675865806589
 MonoBehaviour:
