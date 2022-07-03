@@ -19,6 +19,7 @@ public class IteamChoose : MonoBehaviour
     public UpdateStats update;
     public WeightedRandomList<Scriptalbe_Items> IteamToChoosed;
     private List<Scriptalbe_Items> ListOfItems = new List<Scriptalbe_Items>();
+    public PauseToChoose choose;
 
     public void CheckForClone()
     {
@@ -72,5 +73,7 @@ public class IteamChoose : MonoBehaviour
         Debug.Log(iteamindex);
         Debug.Log(ListOfItems[iteamindex]);
         update.UpdatePlayerStats(ListOfItems[iteamindex]);
+        for (int i = 0; i < 2; i++) Destroy(transform.GetChild(i).gameObject);
+            choose.IteamChoosed_Unpause();
     }
 }
